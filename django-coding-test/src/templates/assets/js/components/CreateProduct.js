@@ -7,6 +7,8 @@ import Dropzone from 'react-dropzone'
 const CreateProduct = (props) => {
 
     const [productVariantPrices, setProductVariantPrices] = useState([])
+    const [name, setName] = useState('');
+    const [sku, setSKU] = useState('');
 
     const [productVariants, setProductVariant] = useState([
         {
@@ -80,7 +82,7 @@ const CreateProduct = (props) => {
         // TODO : write your code here to save the product
     }
 
-
+    console.log(name);
     return (
         <div>
             <section>
@@ -90,11 +92,11 @@ const CreateProduct = (props) => {
                             <div className="card-body">
                                 <div className="form-group">
                                     <label htmlFor="">Product Name</label>
-                                    <input type="text" placeholder="Product Name" className="form-control"/>
+                                    <input type="text" placeholder="Product Name" className="form-control" onChange={event=>setName(event.target.value)} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="">Product SKU</label>
-                                    <input type="text" placeholder="Product Name" className="form-control"/>
+                                    <input type="text" placeholder="Product Name" className="form-control" onChange={event=>setSKU(event.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="">Description</label>
