@@ -7,6 +7,11 @@ from django.views.generic import ListView
 class CreateProductView(generic.TemplateView):
     template_name = 'products/create.html'
 
+    # There are issues in Product variants (React Issue)
+    # The Create Product Page doesn't look appropriate as shown in the picture.
+    # So skipping it
+    # It can be made functional using CreateView
+
     def get_context_data(self, **kwargs):
         context = super(CreateProductView, self).get_context_data(**kwargs)
         variants = Variant.objects.filter(active=True).values('id', 'title')
@@ -16,7 +21,7 @@ class CreateProductView(generic.TemplateView):
 
 
 class ProductListView(ListView):
-    paginate_by = 5
+    paginate_by = 2
     model = Product
     template_name = 'products/list.html'
 
