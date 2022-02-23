@@ -9,7 +9,7 @@ class CreateProductView(generic.TemplateView):
 
     # There are issues in Product variants (React Issue)
     # The Create Product Page doesn't look appropriate as shown in the picture.
-    # So skipping it
+    # So skipping it for now
     # It can be made functional using CreateView
 
     def get_context_data(self, **kwargs):
